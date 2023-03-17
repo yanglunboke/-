@@ -10,6 +10,9 @@ public class Exercise_3_2_4 {
         BinaryOperation_3_2 bop;
         for(int i=0;i<operationCount;i++){
             bop=new AdditionOperation();
+            if(bop.equals(operationList)){
+                continue;
+            }
             operationList.add(bop);
         }
     }
@@ -17,6 +20,29 @@ public class Exercise_3_2_4 {
         BinaryOperation_3_2 bop;
         for(int i=0;i<operationCount;i++){
             bop=new SubstractOperation();
+            if(bop.equals(operationList)){
+                continue;
+            }
+            operationList.add(bop);
+        }
+    }
+    public void generateDivExercise(int operationCount){
+        BinaryOperation_3_2 bop;
+        for(int i=0;i<operationCount;i++){
+            bop=new DivOperation();
+            if(bop.equals(operationList)){
+                continue;
+            }
+            operationList.add(bop);
+        }
+    }
+    public void generateMulExercise(int operationCount){
+        BinaryOperation_3_2 bop;
+        for(int i=0;i<operationCount;i++){
+            bop=new MulOperation();
+            if(bop.equals(operationList)){
+                continue;
+            }
             operationList.add(bop);
         }
     }
@@ -24,17 +50,26 @@ public class Exercise_3_2_4 {
         BinaryOperation_3_2 bop;
         while(operationCount>0){
             bop=generateOperation();
-            operationCount--;
+            if(bop.equals(operationList)){
+                continue;
+            }
             operationList.add(bop);
+            operationCount--;
         }
     }
     private BinaryOperation_3_2 generateOperation(){
         Random random=new Random();
-        int opValue=random.nextInt(2);
+        int opValue=random.nextInt(4);
         if(opValue==1){
             return new AdditionOperation();
+        }else if(opValue==2){
+            return new SubstractOperation();
+        }else if(opValue==3){
+            return new MulOperation();
+        }else{
+            return new DivOperation();
         }
-        return new SubstractOperation();
+
     }
     public boolean hasNext(){
         return current<=operationList.size()-1;
