@@ -15,13 +15,18 @@ abstract class BinaryOperation_3_2 {
         Random random=new Random();
         left=random.nextInt(UPPER+1);
         do {
-            if(operator=='÷'){
-                right=random.nextInt(UPPER+1)+1;
-                while(left<right||left%right!=0){
-                    right=random.nextInt(UPPER+1)+1;
+            right=random.nextInt(UPPER+1);
+            if(anOperator=='÷'){
+                while(!Divchecking(left,right)){
+                    left=random.nextInt(UPPER+1);
+                    right=random.nextInt(UPPER+1);
                 }
-            }else {
-                right=random.nextInt(UPPER+1);
+            }
+            if(anOperator=='×'){
+                while(!Mulchecking(left,right)){
+                    left=random.nextInt(UPPER+1);
+                    right=random.nextInt(UPPER+1);
+                }
             }
             result=calculate(left,right);
         }while(!(checkingCalculation(result)));
@@ -29,6 +34,30 @@ abstract class BinaryOperation_3_2 {
         right_operand=right;
         operator=anOperator;
         value=result;
+    }
+
+    boolean Divchecking(int left,int right){
+        if(right==0){
+            return false;
+        }else if(left%right!=0){
+            return false;
+        }else if(left<right){
+            return false;
+        }else if(right==1){
+            return false;
+        }else if(left==right){
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+    boolean Mulchecking(int left,int right){
+        if(left==1||right==1||left==0||right==0){
+            return false;
+        }else {
+            return true;
+        }
     }
     abstract boolean checkingCalculation(int anInteger);
     abstract int calculate(int left,int right);

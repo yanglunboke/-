@@ -6,7 +6,7 @@ public class SubstractOperation extends BinaryOperation_3_2{
     }
     @Override
     boolean checkingCalculation(int anInteger) {
-        return anInteger<=UPPER;
+        return anInteger<=UPPER&&anInteger>=0;
     }
 
     @Override

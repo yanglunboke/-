@@ -2,19 +2,6 @@ package 链表;
 
 import java.util.List;
 
-class ListNode{
-    int val;
-    ListNode next;
-    public ListNode() {}
-    public ListNode(int val) {
-        this.val = val;
-    }
-    public ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
-}
-
 public class 两数相加 {
     public static void main(String[] args) {
         ListNode l1=new ListNode(2);

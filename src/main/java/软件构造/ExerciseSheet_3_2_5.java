@@ -25,8 +25,8 @@ public class ExerciseSheet_3_2_5 {
         ExerciseSheet_3_2_5 sheet=new ExerciseSheet_3_2_5();
         Exercise_3_2_4 exercise=new Exercise_3_2_4();
         //exercise.generateAdditionExercise(28);
-        exercise.generateBinaryExercise(28);
+        exercise.generateBinaryExercise(100);
         System.out.println("---- generate and display add exercises ----");
-        sheet.formattedDisplay(exercise,4);
+        sheet.formattedDisplay(exercise,5);
     }
 }
