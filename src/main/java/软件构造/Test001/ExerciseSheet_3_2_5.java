@@ -1,4 +1,4 @@
-package 软件构造;
+package 软件构造.Test001;
 
 public class ExerciseSheet_3_2_5 {
     private static final short COLUMN_NUMBER=5;

@@ -118,6 +118,18 @@ public class MainGUI extends JFrame {
 			}
 		});
 
+		JMenu menuJuan=new JMenu("试卷");
+		menuBar.add(menuJuan);
+
+		JMenuItem Juan=new JMenuItem("生成试卷");
+		Juan.setActionCommand("Juan");
+		menuJuan.add(Juan);
+		Juan.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				online(arg0);//自定义响应方法
+			}
+		});
+
 		JMenu menuExit = new JMenu("退出");
 		menuBar.add(menuExit);
 		JMenuItem exit = new JMenuItem("退出");
@@ -231,6 +243,10 @@ public class MainGUI extends JFrame {
 			equationCount = Integer.parseInt(JOptionPane.showInputDialog("请输入混合算式数量"));
 			exercise = new Exercise(equationCount);
 			exercise.generateExercise();
+		}else if(arg0.getActionCommand() == "Juan"){
+			equationCount = Integer.parseInt(JOptionPane.showInputDialog("请选择试卷：（50/100道）"));
+			exercise = new Exercise(equationCount);
+			exercise.generateExercise();
 		}
 
 		answer = new Answer();
@@ -322,7 +338,7 @@ public class MainGUI extends JFrame {
 		}
 		Check ch = new Check();
 		ch.check(exercise, answer);
-		labelResult.setText("正确：" + ch.getRight() + "； 错误：" + ch.getWrong());
+		labelResult.setText("正确：" + ch.getRight() + "； 错误：" + ch.getWrong()+"   错题已导入错题本 ");
 	}
 
 }

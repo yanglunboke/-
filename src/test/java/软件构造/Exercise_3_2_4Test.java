@@ -1,8 +1,8 @@
 package 软件构造;
 
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+import 软件构造.Test001.DivOperation;
+import 软件构造.Test001.SubstractOperation;
 
 class Exercise_3_2_4Test {
 

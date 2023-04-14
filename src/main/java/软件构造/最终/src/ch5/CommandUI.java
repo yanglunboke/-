@@ -6,7 +6,7 @@ import 软件构造.最终.src.ch3.Student;
 import java.util.Scanner;
 
 public class CommandUI {
-	static String ui1[] = {"退出","在线练习","","",""};//菜单数组（根据表驱动编程）
+	static String ui1[] = {"退出","在线练习","生成试卷","错题本",""};//菜单数组（根据表驱动编程）
 	static String ui2[][]= {
 			{},//退出下面没有二级菜单
 			{"返回上一级菜单","加法","减法","乘法","除法","混合"},//在线练习

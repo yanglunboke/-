@@ -1,8 +1,4 @@
-package 软件构造;
-
-import com.sun.org.apache.xpath.internal.operations.Div;
-
-import java.util.Random;
+package 软件构造.Test001;
 
 public class DivOperation extends BinaryOperation_3_2{
     DivOperation(){

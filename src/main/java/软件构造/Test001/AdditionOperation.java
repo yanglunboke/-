@@ -1,4 +1,4 @@
-package 软件构造;
+package 软件构造.Test001;
 
 public class AdditionOperation extends BinaryOperation_3_2 {
     AdditionOperation(){
